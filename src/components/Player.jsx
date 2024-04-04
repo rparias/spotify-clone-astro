@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
+import { usePlayerStore } from "@/store/playerStore";
 
 export const Play = () => (
   <svg data-encore-id="icon" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" className="Svg-sc-ytk21e-0 dYnaPI"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
@@ -9,7 +10,7 @@ export const Pause = () => (
 )
 
 export function Player () {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { isPlaying, setIsPlaying } = usePlayerStore(state => state);
   const [currentSong, setCurrentSong] = useState(null);
   const audioRef = useRef();
 
@@ -27,6 +28,7 @@ export function Player () {
 
     setIsPlaying(!isPlaying);
   }
+
   return (
     <div className="flex flex-row justify-between items-center w-full px-4 z-50">
       <div>Current Song</div>
