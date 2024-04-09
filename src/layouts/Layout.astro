@@ -29,7 +29,7 @@ const { title } = Astro.props;
 			<main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto">
 				<slot />
 			</main>
-			<footer class="[grid-area:player]">
+			<footer class="[grid-area:player] h-[80px]">
 				<!-- client:load will load the component when loading the page, and then will be available on the client for interactivity -->
 				<Player client:load transition:name="media-player" transition:persist /> 
 				<!-- transition:persist the component persists its state even navegating to other pages -->

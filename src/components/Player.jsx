@@ -144,7 +144,7 @@ export function Player () {
   }
 
   return (
-    <div className="flex flex-row justify-between items-center w-full px-4 z-50">
+    <div className="flex flex-row justify-between items-center w-full px-1 z-50">
       <div className="w-[200px]">
         <CurrentSong {...currentMusic.song} />
       </div>
